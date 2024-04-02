@@ -14,7 +14,7 @@ async def add_todo(todo: Todo) -> dict:
 async def get_todo() -> dict:
     return {"todo_list": todo_list}
 
-@todo_router.delete("/todo/{todo_id}")
+@todo_router.get("/todo/{todo_id}")
 async def get_single_todo(todo_id: int) -> dict:
     for todo in todo_list:
         if todo.id == todo_id:
