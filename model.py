@@ -3,16 +3,15 @@ from typing import List, Optional
 from fastapi import Form
 
 class Todo(BaseModel):
-    id: int
-    item: str
-
-class TodoItem(BaseModel):
     id: Optional[int]
     item: str
 
     @classmethod
     def as_form(cls, item: str = Form(...)):
         return cls(item=item)
+
+class TodoItem(BaseModel):
+    item: str
     class Config:
         schema_extra = {
             "example": {"item": "Read the next chapter of the book."}
