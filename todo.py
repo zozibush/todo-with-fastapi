@@ -14,7 +14,7 @@ async def add_todo(todo: Todo) -> dict:
     return {"message": "Todo added successfully"}
 
 @todo_router.get("/todo", response_model=TodoItems)
-async def get_todo() -> dict:
+async def retrieve_todo() -> dict:
     return {"todo_list": todo_list}
 
 @todo_router.get("/todo/{todo_id}")
