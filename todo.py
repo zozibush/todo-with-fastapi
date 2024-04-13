@@ -16,8 +16,8 @@ async def add_todo(todo: Todo) -> dict:
 @todo_router.get("/todo", response_model=TodoItems)
 async def retrieve_todo(request: Request) -> dict:
     return templates.TemplateResponse("todo.html", {
-        "request": Request,
-        "todo_list": todo_list
+        "request": request,
+        "todos": todo_list
     })
 
 @todo_router.get("/todo/{todo_id}")
